@@ -9,12 +9,26 @@ import SwiftUI
 
 struct HistoryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            ContentHeaderView()
+            PageTitleView(title: "Pizza History")
+            SelectedImageView(image: "1_250w")
+                .padding(5)
+            
+            PizzaHistoryMenuListView()
+            
+        }
     }
 }
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView()
+        Group{
+            HistoryView()
+            HistoryView()
+                .colorScheme(.dark)
+                .background(Color.black)
+        }
+        
     }
 }

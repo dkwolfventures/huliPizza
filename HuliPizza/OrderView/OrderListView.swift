@@ -9,7 +9,12 @@ import SwiftUI
 
 struct OrderListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ListHeaderView(text: "Your Order")
+            List(0..<5){item in
+                OrderRowView()
+            }
+        }
     }
 }
 
@@ -18,3 +23,4 @@ struct OrderListView_Previews: PreviewProvider {
         OrderListView()
     }
 }
+

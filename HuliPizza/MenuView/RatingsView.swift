@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct RatingsView: View {
+    var count:Int = 4
+    var rating:[String]{
+        let symbolName = "\(count).circle"
+        return Array(repeating:symbolName, count:count)
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ForEach(rating, id:\.self){item in
+                Image(systemName:item)
+                    .font(.headline)
+                .foregroundColor(Color("G4"))
+            }
+        }
     }
 }
 
+
 struct RatingsView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingsView()
+        RatingsView(count:5)
     }
 }

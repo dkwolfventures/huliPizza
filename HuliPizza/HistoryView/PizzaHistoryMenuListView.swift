@@ -9,7 +9,9 @@ import SwiftUI
 
 struct PizzaHistoryMenuListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(0 ..< 5){ Item in
+            PizzaHistoryMenuRowView()
+        }
     }
 }
 
